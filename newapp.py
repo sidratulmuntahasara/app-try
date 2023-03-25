@@ -21,3 +21,13 @@ class childApp(GridLayout):
         self.submit = Button(text='Submit', font_size=40)
         self.submit.bind(on_press=self.pressed)
         self.add_widget(self.submit)
+
+    def pressed(self, instance):
+        first = self.first_name.text
+        last = self.last_name.text
+        email = self.email.text
+        print("First Name:", first, "Last Name:", last, "Email:", email)
+        self.first_name.text = ""
+        self.last_name.text = ""
+        self.email.text = ""
+        self.first_name.focus = True
